@@ -1,0 +1,643 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5fbff;
+    color: #183b56;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 80, 130, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 38px;
+    color: #087ea4;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #183b56;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background: #00a8cc;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00a8cc;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+#bar {
+    display: none;
+    font-size: 26px;
+    color: #087ea4;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.main {
+    min-height: 620px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background:
+        radial-gradient(circle at 85% 30%, rgba(0, 185, 225, 0.18), transparent 30%),
+        linear-gradient(135deg, #eefaff, #ffffff);
+}
+
+.mainText {
+    width: 52%;
+    z-index: 2;
+}
+
+.mainText h1 {
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.15;
+    color: #123b56;
+    margin-bottom: 18px;
+    font-weight: 800;
+}
+
+.mainText h3 {
+    display: inline-block;
+    color: #00a8cc;
+    font-size: 25px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.mainText h3::before {
+    content: "";
+    display: inline-block;
+    width: 45px;
+    height: 4px;
+    background: #00a8cc;
+    vertical-align: middle;
+    margin-right: 12px;
+    border-radius: 10px;
+}
+
+.mainText button {
+    display: block;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(135deg, #00a8cc, #087ea4);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 168, 204, 0.25);
+    transition: 0.3s;
+}
+
+.mainText button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 168, 204, 0.35);
+}
+
+.main > img {
+    width: 47%;
+    max-width: 600px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 25px rgba(0, 90, 120, 0.15));
+    animation: doctorFloat 4s ease-in-out infinite;
+}
+
+@keyframes doctorFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+#doctor,
+#speciality,
+#patient,
+#contact {
+    padding: 90px 7%;
+}
+
+.head {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.head h1 {
+    font-size: 38px;
+    color: #123b56;
+    position: relative;
+    display: inline-block;
+}
+
+.head h1::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: linear-gradient(90deg, #00a8cc, #5de0e6);
+    border-radius: 10px;
+    margin: 12px auto 0;
+}
+
+/* =========================
+   DOCTORS
+========================= */
+
+#doctor {
+    background: #ffffff;
+}
+
+.teams {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 91, 130, 0.10);
+    border: 1px solid #e5f4fa;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0, 150, 190, 0.18);
+}
+
+.card img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card p:first-of-type {
+    color: #087ea4;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 18px 0 8px;
+}
+
+.card p:last-of-type {
+    color: #718096;
+    padding: 0 25px 25px;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* =========================
+   SPECIALITY
+========================= */
+
+#speciality {
+    background: linear-gradient(135deg, #f0fbff, #ffffff);
+}
+
+.speciality {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.spCard {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #dff3fa;
+    box-shadow: 0 10px 30px rgba(0, 100, 140, 0.08);
+    transition: 0.4s;
+}
+
+.spCard:hover {
+    transform: translateY(-8px);
+    border-color: #00a8cc;
+    box-shadow: 0 18px 40px rgba(0, 168, 204, 0.16);
+}
+
+.spCard img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.spCard:hover img {
+    transform: scale(1.1);
+}
+
+.spCard p:first-of-type {
+    font-size: 21px;
+    font-weight: 700;
+    color: #087ea4;
+    margin-bottom: 10px;
+}
+
+.spCard p:last-of-type {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================
+   PATIENT REVIEWS
+========================= */
+
+#patient {
+    background: #ffffff;
+}
+
+.reviews {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.patientReview {
+    background: #f3fbfe;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dceff5;
+    transition: 0.4s;
+}
+
+.patientReview:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 130, 170, 0.14);
+}
+
+.patientReview img {
+    width: 48%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact {
+    background: linear-gradient(135deg, #e9faff, #f8fdff);
+}
+
+.contact {
+    max-width: 600px;
+    margin: auto;
+    padding: 45px;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 15px 45px rgba(0, 100, 140, 0.12);
+    text-align: center;
+}
+
+.contact h1 {
+    color: #123b56;
+    margin-bottom: 30px;
+}
+
+.contact input {
+    width: 100%;
+    padding: 15px 18px;
+    margin-bottom: 18px;
+    border: 1px solid #d5eaf1;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    background: #f8fdff;
+    transition: 0.3s;
+}
+
+.contact input:focus {
+    border-color: #00a8cc;
+    box-shadow: 0 0 0 4px rgba(0, 168, 204, 0.08);
+}
+
+.contact button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background: linear-gradient(135deg, #00a8cc, #087ea4);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 65px 7%;
+    background: #102f43;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer .text h3 {
+    color: #5de0e6;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer .text p {
+    color: #c9dce5;
+    margin: 10px 0;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer .text p:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+/* =========================
+   DETAIL POPUP
+========================= */
+
+.detail {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 35, 50, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail.active {
+    display: flex;
+}
+
+.detail .content {
+    width: min(500px, 90%);
+    min-height: 220px;
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+#closeBtn {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #087ea4;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    .main {
+        padding: 60px 5%;
+    }
+
+    .teams,
+    .speciality,
+    .reviews {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+
+    nav {
+        height: 70px;
+    }
+
+    #bar {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 270px;
+        height: calc(100vh - 70px);
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 30px;
+        gap: 25px;
+        box-shadow: 10px 0 30px rgba(0, 80, 110, 0.12);
+        transition: 0.4s;
+    }
+
+    nav ul.showData {
+        left: 0;
+    }
+
+    .main {
+        min-height: auto;
+        padding: 70px 7%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mainText {
+        width: 100%;
+    }
+
+    .mainText h1 {
+        font-size: 43px;
+    }
+
+    .mainText h3 {
+        margin-top: 10px;
+    }
+
+    .mainText button {
+        margin: auto;
+    }
+
+    .main > img {
+        width: 80%;
+        margin-top: 35px;
+    }
+
+    #doctor,
+    #speciality,
+    #patient,
+    #contact {
+        padding: 70px 6%;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .logo h1 {
+        font-size: 32px;
+    }
+
+    .head h1 {
+        font-size: 30px;
+    }
+
+    .teams,
+    .speciality,
+    .reviews,
+    .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .mainText h1 {
+        font-size: 37px;
+    }
+
+    .mainText h3 {
+        font-size: 20px;
+    }
+
+    .card img {
+        height: 300px;
+    }
+
+    .patientReview img {
+        height: 180px;
+    }
+
+    .contact {
+        padding: 30px 20px;
+    }
+
+    .footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .mainText h1 {
+        font-size: 32px;
+    }
+
+    .main > img {
+        width: 95%;
+    }
+
+    .patientReview {
+        flex-direction: column;
+    }
+
+    .patientReview img {
+        width: 100%;
+    }
+}
